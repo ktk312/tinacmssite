@@ -1,0 +1,39 @@
+.navitem {
+  font-size: 2rem;
+  margin: 0;
+}
+.navitemlink{
+  font-size: 0.8rem;
+  margin:0;
+  text-decoration: none;
+}
+
+.topnav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 60px;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 2fr 4fr 4fr ;
+  grid-gap: 3rem;
+  text-align: center;
+  padding-top: 30px;
+}
+.textdecor{
+  text-decoration: none;
+  color: black;
+}
+.logo{
+  padding-top: -10px;
+}
+
+.linksgrid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3rem;
+  text-align: center;
+  padding-top: 15px;
+
+}

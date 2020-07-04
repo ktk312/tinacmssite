@@ -1,16 +1,15 @@
 import React from 'react';
 import { InlineTextarea, BlocksControls } from 'react-tinacms-inline';
-import '../styles/hero.css';
-export function Hero({ text_color, background_color, align , src}) {
+import '../styles/video.css';
+import ReactPlayer from 'react-player';
+export function Video({ text_color, background_color, align,src }) {
   
   return (
     <div
       className="hero"
-      id="about"
       style={{
         color: text_color || '#000',
         backgroundColor: background_color || 'aliceblue',
-        backgroundImage: `url(${src})`,
         textAlign: align,
         justifyContent: align === 'left' ? 'start' : align,
       }}
@@ -23,21 +22,34 @@ export function Hero({ text_color, background_color, align , src}) {
           <InlineTextarea name="subtext" focusRing={false} />
         </p>
       </div>
+      <div className='player-wrapper'>
+            <ReactPlayer
+            className='react-player fixed-bottom'
+            url= '/video/howitworkvideo.mp4'
+            width='70%'
+            height='60%'
+            controls = {true}
+            loop = {true}
+            playing = {true}
+
+            />
+        </div>
     </div>
   );
 }
 
-export const heroBlock = {
+export const videoBlock = {
   Component: ({ index, data }) => (
     <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
-      <Hero {...data} />
+      <Video {...data} />
     </BlocksControls>
   ),
   template: {
-    label: 'Hero',
+    label: 'Video',
     defaultItem: {
-      headline: 'Suspended in a Sunbeam',
-      subtext: 'Dispassionate extraterrestrial observer',
+      headline: 'How it works',
+      subtext: 'Through our proprietary Machine Learning and Computer Vision technology, customers are able see how products look on their bodies instantly by uploading a full-body image.',
+      video:'/video/howitworkvideo.mp4',
       background_color: '#051e26',
       text_color: '#fffaf4',
       align: 'center',

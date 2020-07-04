@@ -2,7 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 3rem;
-  background-color: #fff;
+  background-color: transparent;
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
 .image-diptych img {

@@ -1,40 +1,50 @@
 import React from 'react';
 import { InlineTextarea, BlocksControls } from 'react-tinacms-inline';
-import '../styles/hero.css';
+import '../styles/topnav.css';
+import logo from '../image/logo.png';
 export function Hero({ text_color, background_color, align , src}) {
   
   return (
     <div
-      className="hero"
-      id="about"
+      className="topnav"
       style={{
         color: text_color || '#000',
-        backgroundColor: background_color || 'aliceblue',
-        backgroundImage: `url(${src})`,
+        backgroundColor: background_color || '#fff',
         textAlign: align,
         justifyContent: align === 'left' ? 'start' : align,
       }}
     >
-      <div className="wrapper wrapper--narrow">
-        <h1>
-          <InlineTextarea name="headline" focusRing={false} />
-        </h1>
-        <p>
-          <InlineTextarea name="subtext" focusRing={false} />
+        
+        <p className="navitem logo">
+          <img src={logo} alt="Proneer"/>
         </p>
-      </div>
+        <p></p>
+        <div className="linksgrid">
+        <p className="navitemlink">
+           <a href="#about" className="textdecor" ><InlineTextarea name="link1text" focusRing={false} /></a>
+        </p>
+        <p className="navitemlink">
+          <a href="#request" className="textdecor"><InlineTextarea name="link2text" focusRing={false} /></a>
+        </p>
+        <p className="navitemlink">
+          <a href="#join" className="textdecor"><InlineTextarea name="link3text" focusRing={false} /></a>
+        </p>
+        <p className="navitemlink">
+          <a href="#contact" className="textdecor"><InlineTextarea name="link4text" focusRing={false} /></a>
+        </p>
+        </div>
     </div>
   );
 }
 
-export const heroBlock = {
+export const topnavBlock = {
   Component: ({ index, data }) => (
     <BlocksControls index={index} focusRing={{ offset: 0 }} insetControls>
       <Hero {...data} />
     </BlocksControls>
   ),
   template: {
-    label: 'Hero',
+    label: 'topnav',
     defaultItem: {
       headline: 'Suspended in a Sunbeam',
       subtext: 'Dispassionate extraterrestrial observer',
